@@ -23,11 +23,11 @@ requirements:
     - python
   run:
     - apscheduler
-    - dash
+    - dash ==2.1.0
     - dash-bootstrap-components
-    - dash-core-components
-    - dash-html-components
-    - dash-table
+    - dash-core-components ==2.0.0
+    - dash-html-components ==2.0.0
+    - dash-table ==5.0.0
     - fire
     - pandas
     - py-cpuinfo
