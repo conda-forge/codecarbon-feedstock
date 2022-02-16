@@ -23,7 +23,7 @@ requirements:
     - python
   run:
     - apscheduler
-    - dash ==2.1.0
+    - dash ==2.0.0
     - dash-bootstrap-components
     - dash-core-components ==2.0.0
     - dash-html-components ==2.0.0
