@@ -11,7 +11,7 @@ source:
   sha256: 8a89a321f6ce371abc20b9e9faf2d743d9276cdcd474c1960f194043532d0412
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - carbonboard = codecarbon.viz.carbonboard:main
@@ -23,8 +23,11 @@ requirements:
     - python
   run:
     - apscheduler
-    - dash
+    - dash ==2.0.0
     - dash-bootstrap-components
+    - dash-core-components ==2.0.0
+    - dash-html-components ==2.0.0
+    - dash-table ==5.0.0
     - fire
     - pandas
     - py-cpuinfo
@@ -58,3 +61,6 @@ about:
 extra:
   recipe-maintainers:
     - PertuyF
+    - benoit-cty
+    - Lothiraldan
+    - vict0rsch
