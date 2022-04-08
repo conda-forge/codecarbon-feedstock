@@ -1,5 +1,5 @@
 {% set name = "codecarbon" %}
-{% set version = "1.2.0" %}
+{% set version = "2.0.0" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/codecarbon-{{ version }}.tar.gz
-  sha256: 8a89a321f6ce371abc20b9e9faf2d743d9276cdcd474c1960f194043532d0412
+  sha256: 0223eaff77cdb098b7eb4fe2c0e50d6a2b150a6157eb0340579f1d8b8e112d26
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - carbonboard = codecarbon.viz.carbonboard:main
@@ -22,14 +22,18 @@ requirements:
     - pip
     - python
   run:
+    - arrow
     - apscheduler
+    - click
     - dash ==2.0.0
     - dash-bootstrap-components
     - dash-core-components ==2.0.0
     - dash-html-components ==2.0.0
     - dash-table ==5.0.0
     - fire
+    - fuzzywuzzy
     - pandas
+    - psutil
     - py-cpuinfo
     - pynvml
     - python >=3.7
