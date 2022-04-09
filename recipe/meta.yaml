@@ -1,5 +1,5 @@
 {% set name = "codecarbon" %}
-{% set version = "1.2.0" %}
+{% set version = "2.0.0" %}
 
 
 package:
@@ -8,13 +8,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/codecarbon-{{ version }}.tar.gz
-  sha256: 8a89a321f6ce371abc20b9e9faf2d743d9276cdcd474c1960f194043532d0412
+  sha256: 0223eaff77cdb098b7eb4fe2c0e50d6a2b150a6157eb0340579f1d8b8e112d26
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - carbonboard = codecarbon.viz.carbonboard:main
+    - codecarbon = codecarbon.cli.main:codecarbon
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -22,14 +23,17 @@ requirements:
     - pip
     - python
   run:
-    - apscheduler
+    - arrow
+    - click
     - dash ==2.0.0
     - dash-bootstrap-components
     - dash-core-components ==2.0.0
     - dash-html-components ==2.0.0
     - dash-table ==5.0.0
     - fire
+    - fuzzywuzzy
     - pandas
+    - psutil
     - py-cpuinfo
     - pynvml
     - python >=3.7
@@ -44,9 +48,55 @@ test:
   commands:
     - pip check
     - carbonboard --help
+    - codecarbon --help
   requires:
     - pip
-
+outputs:
+  - name: codecarbon
+  - name: codecarbon-viz
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python
+      run:
+        - python >=3.7
+        - dash ==2.0.0
+        - dash-bootstrap-components
+        - dash-core-components ==2.0.0
+        - dash-html-components ==2.0.0
+        - dash-table ==5.0.0
+        - fire
+        - {{ pin_subpackage('codecarbon', exact=True) }}
+  - name: codecarbon-test
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python
+      run:
+        - python >=3.7
+        - numpy
+        - pytest
+        - responses
+        - requests-mock
+        - tox
+        - {{ pin_subpackage('codecarbon', exact=True) }}
+  - name: codecarbon-dev
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python
+      run:
+        - python >=3.7
+        - black
+        - flake8
+        - isort
+        - mypy
+        - sphinx
+        - sphinx-rtd-theme
+        - {{ pin_subpackage('codecarbon-test', exact=True) }}
 about:
   home: https://pypi.org/project/codecarbon/
   license: MIT
