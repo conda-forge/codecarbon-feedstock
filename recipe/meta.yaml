@@ -25,11 +25,11 @@ requirements:
   run:
     - arrow
     - click
-    - dash ==2.0.0
+    - dash
     - dash-bootstrap-components
-    - dash-core-components ==2.0.0
-    - dash-html-components ==2.0.0
-    - dash-table ==5.0.0
+    - dash-core-components
+    - dash-html-components
+    - dash-table
     - fire
     - fuzzywuzzy
     - pandas
@@ -61,11 +61,11 @@ outputs:
         - python
       run:
         - python >=3.7
-        - dash ==2.0.0
+        - dash
         - dash-bootstrap-components
-        - dash-core-components ==2.0.0
-        - dash-html-components ==2.0.0
-        - dash-table ==5.0.0
+        - dash-core-components
+        - dash-html-components
+        - dash-table
         - fire
         - {{ pin_subpackage('codecarbon', exact=True) }}
   - name: codecarbon-test
