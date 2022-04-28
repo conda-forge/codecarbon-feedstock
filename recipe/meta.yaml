@@ -1,5 +1,5 @@
 {% set name = "codecarbon" %}
-{% set version = "2.0.0" %}
+{% set version = "2.1.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/codecarbon-{{ version }}.tar.gz
-  sha256: 0223eaff77cdb098b7eb4fe2c0e50d6a2b150a6157eb0340579f1d8b8e112d26
+  sha256: 497c2777bcfc35efbafa6785a41be4a755f6c2a5ad87af144368b0d5c97c459a
 
 build:
   number: 0
@@ -101,7 +101,7 @@ about:
   home: https://pypi.org/project/codecarbon/
   license: MIT
   license_file: LICENSE
-  summary: 'Emissions Tracker'
+  summary: Emissions Tracker
   description: |
     Emissions Tracker is a Python package for tracking the carbon emissions produced by various kinds of computer programs, from straightforward algorithms to deep neural networks.
     By taking into account your computing infrastructure, location, usage and running time, Emissions Tracker can provide an estimate of how much CO2 you produced, and give you some comparisons with common modes of transporation to give you an order of magnitude.
