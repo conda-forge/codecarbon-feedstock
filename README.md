@@ -1,11 +1,11 @@
-About codecarbon
-================
+About codecarbon-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/codecarbon-feedstock/blob/main/LICENSE.txt)
 
 Home: https://pypi.org/project/codecarbon/
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/codecarbon-feedstock/blob/main/LICENSE.txt)
 
 Summary: Emissions Tracker
 
