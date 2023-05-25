@@ -1,5 +1,5 @@
 {% set name = "codecarbon" %}
-{% set version = "2.2.1" %}
+{% set version = "2.2.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/codecarbon-{{ version }}.tar.gz
-  sha256: 44f3257a1814377967a8e9dcdf177583a7a2a1624716d38818410af871d89afd
+  sha256: dec6d1d3e3d53fc19b1a6a78ce6ea4942c752b2d277b5a84ebe54c4d76877ad0
 
 build:
   number: 0
