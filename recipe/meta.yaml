@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/codecarbon-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/codecarbon-{{ version }}.tar.gz
   sha256: dec6d1d3e3d53fc19b1a6a78ce6ea4942c752b2d277b5a84ebe54c4d76877ad0
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - carbonboard = codecarbon.viz.carbonboard:main
@@ -21,7 +21,7 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python {{ python_min }}
   run:
     - arrow
     - click
@@ -36,7 +36,7 @@ requirements:
     - psutil
     - py-cpuinfo
     - pynvml
-    - python >=3.7
+    - python >={{ python_min }}
     - requests
 
 test:
@@ -51,6 +51,7 @@ test:
     - codecarbon --help
   requires:
     - pip
+    - python {{ python_min }}
 outputs:
   - name: codecarbon
   - name: codecarbon-viz
@@ -58,9 +59,9 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python
+        - python {{ python_min }}
       run:
-        - python >=3.7
+        - python >={{ python_min }}
         - dash
         - dash-bootstrap-components
         - dash-core-components
@@ -73,9 +74,9 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python
+        - python {{ python_min }}
       run:
-        - python >=3.7
+        - python >={{ python_min }}
         - numpy
         - pytest
         - responses
@@ -87,9 +88,9 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python
+        - python {{ python_min }}
       run:
-        - python >=3.7
+        - python >={{ python_min }}
         - black
         - flake8
         - isort
