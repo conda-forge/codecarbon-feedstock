@@ -1,5 +1,5 @@
 {% set name = "codecarbon" %}
-{% set version = "3.3.0" %}
+{% set version = "3.3.1" %}
 
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 80dad7db6e62f5c6b716afd3746ea892146d36071ca1e786683899c6de75d6f7
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: a10bdb6d59f30ed299780f9df6b7c77f7887eb6b67887293ef2e52f160b820a9
 
 build:
   number: 0
