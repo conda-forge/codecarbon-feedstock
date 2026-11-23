@@ -1,5 +1,5 @@
 {% set name = "codecarbon" %}
-{% set version = "3.3.2" %}
+{% set version = "3.3.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2e84e98131c386702482a27abcb8106c18934b55aa3d05acdde720de53018bbe
+  sha256: b55c4754f6ad245607cc6e8c790dc1d45ce5dadab177cc67bee63b46072c52ca
 
 build:
   number: 0
